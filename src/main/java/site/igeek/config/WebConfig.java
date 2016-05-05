@@ -25,17 +25,17 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Resource
     RootInterceptor rootInterceptor;
 
+
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         converters.add(createGsonHttpMessageConverter());
         super.configureMessageConverters(converters);
         LOGGER.info("# 添加GSON 支持结束");
-
     }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(rootInterceptor).addPathPatterns("/**");
+        registry.addInterceptor(rootInterceptor);
     }
 
 

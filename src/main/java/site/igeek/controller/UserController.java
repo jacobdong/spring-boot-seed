@@ -4,10 +4,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import site.igeek.model.common.JsonResponse;
 import site.igeek.model.common.PaginationData;
 import site.igeek.model.po.User;
@@ -44,5 +41,20 @@ public class UserController {
         }
 
         return new JsonResponse<>(userService.getUsers(pageIndex, pageSize, sort));
+    }
+
+
+    @RequestMapping(value = "/{userId}", method = RequestMethod.GET, produces = "application/json")
+    public
+    @ResponseBody
+    JsonResponse<User> getUser(@PathVariable String userId) {
+        return new JsonResponse<>(userService.getUser(userId));
+    }
+
+    @RequestMapping(value = "/{userId}/customers", method = RequestMethod.GET, produces = "application/json")
+    public
+    @ResponseBody
+    JsonResponse<String> getxxx(@PathVariable String userId) {
+        return new JsonResponse<>("abc123123123");
     }
 }

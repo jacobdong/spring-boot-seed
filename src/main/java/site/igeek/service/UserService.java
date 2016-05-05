@@ -26,4 +26,9 @@ public class UserService {
         return PaginationDataConvert.convertJpaPage2PaginationData(userPage, pageSize);
     }
 
+
+    public User getUser(String userId) {
+        return userRepository.findOne(userId);
+    }
+
 }

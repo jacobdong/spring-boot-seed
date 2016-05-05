@@ -4,8 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import java.util.Arrays;
-
 /**
  * Created by jacobdong on 16/5/4.
  */
@@ -23,11 +21,14 @@ public class ApplicationLauncher {
         System.out.println("====================================");
 
 
-        String[] beanNames = ctx.getBeanDefinitionNames();
-        Arrays.sort(beanNames);
-        for (String beanName : beanNames) {
-            System.out.println(beanName);
-        }
+//        String[] beanNames = ctx.getBeanDefinitionNames();
+//        Arrays.sort(beanNames);
+//        for (String beanName : beanNames) {
+//            System.out.println(beanName);
+//        }
+
+        System.out.println(ctx.getApplicationName());
+        System.out.println(ctx.getStartupDate());
         System.out.println("====================================");
     }
 }
