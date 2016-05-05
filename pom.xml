@@ -6,7 +6,7 @@
 
     <groupId>site.igeek</groupId>
     <artifactId>spring-boot-seed</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>v1.0.1R20160505</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -48,18 +48,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>springloaded</artifactId>
         </dependency>
-
-        <!--<dependency> -->
-        <!--<groupId>org.mongodb</groupId> -->
-        <!--<artifactId>mongo-java-driver</artifactId> -->
-        <!--<version>3.2.1</version> -->
-        <!--</dependency> -->
-
-        <!--<dependency> -->
-        <!--<groupId>org.springframework.data</groupId> -->
-        <!--<artifactId>spring-data-mongodb</artifactId> -->
-        <!--<version>1.7.0.RELEASE</version> -->
-        <!--</dependency> -->
 
         <dependency>
             <groupId>mysql</groupId>
@@ -111,12 +99,6 @@
                     <target>1.8</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>springloaded</artifactId>
-                    </dependency>
-                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

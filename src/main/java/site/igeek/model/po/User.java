@@ -1,6 +1,7 @@
 package site.igeek.model.po;
 
 import com.google.gson.annotations.Expose;
+import site.igeek.config.Exclude;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,7 +16,8 @@ public class User implements Serializable {
     @Id
     private String id;
     private String account;
-    @Expose(serialize = false)
+    @Expose
+    @Exclude(serialize = false)
     private String password;
     private Date createTime;
 
