@@ -1,4 +1,4 @@
-package site.igeek.model.po;
+package site.igeek.model.po.entity;
 
 import com.google.gson.annotations.Expose;
 import site.igeek.config.Exclude;

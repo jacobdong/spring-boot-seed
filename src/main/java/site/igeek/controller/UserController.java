@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import site.igeek.model.common.JsonResponse;
 import site.igeek.model.common.PaginationData;
-import site.igeek.model.po.User;
+import site.igeek.model.po.entity.User;
 import site.igeek.service.UserService;
 
 import java.util.Arrays;

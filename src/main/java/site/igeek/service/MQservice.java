@@ -14,13 +14,13 @@ import java.io.UnsupportedEncodingException;
  */
 @Service
 public class MQservice {
+
     private final Logger LOGGER = LoggerFactory.getLogger(MQservice.class);
 
     private final String CHARSET = "UTF-8";
 
     @Resource
     StringRedisTemplate stringRedisTemplate;
-
 
     /**
      * 使用连接池的方式 get

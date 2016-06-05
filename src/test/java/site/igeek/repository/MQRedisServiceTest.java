@@ -14,7 +14,6 @@ import javax.annotation.Resource;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static org.hibernate.jpa.internal.QueryImpl.LOG;
 
 /**
  * Created by jacobdong on 16/6/5.
@@ -44,7 +43,7 @@ public class MQRedisServiceTest {
             Assert.assertEquals(formatDate, value);
         }
 
-        LOG.info("测试结束,消耗时间为" + (System.currentTimeMillis() - startTime) + "毫秒");
+        LOGGER.info("测试结束,消耗时间为" + (System.currentTimeMillis() - startTime) + "毫秒");
     }
 
 }

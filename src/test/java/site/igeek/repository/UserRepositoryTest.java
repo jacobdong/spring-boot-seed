@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import site.igeek.ApplicationLauncher;
-import site.igeek.model.po.User;
+import site.igeek.model.po.entity.User;
+import site.igeek.repository.entity.UserRepository;
 
 /**
  * Created by jacobdong on 16/5/5.
