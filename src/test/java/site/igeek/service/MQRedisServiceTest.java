@@ -1,4 +1,4 @@
-package site.igeek.repository;
+package site.igeek.service;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import site.igeek.ApplicationLauncher;
-import site.igeek.service.MQservice;
 
 import javax.annotation.Resource;
 import java.text.SimpleDateFormat;
