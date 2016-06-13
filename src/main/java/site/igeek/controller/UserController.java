@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import site.igeek.model.common.JsonResponse;
 import site.igeek.model.common.PaginationData;
 import site.igeek.model.po.entity.User;
+import site.igeek.monitor.Execute;
 import site.igeek.service.UserService;
 
 import java.util.Arrays;
@@ -23,6 +24,7 @@ public class UserController {
     UserService userService;
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
+    @Execute(name = "获取用户列表")
     public
     @ResponseBody
     JsonResponse<PaginationData<User>> getAllUser(@RequestParam(required = false, defaultValue = "1") int pageIndex,

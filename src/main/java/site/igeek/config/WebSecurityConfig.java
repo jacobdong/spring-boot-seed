@@ -20,7 +20,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication().withUser("user").password("abc123").roles("USER");
-            auth.inMemoryAuthentication().withUser("admin").password("RootRoot!!!!---").roles("ADMIN");
+        auth.inMemoryAuthentication().withUser("admin").password("RootRoot!!!!---").roles("ADMIN");
         auth.inMemoryAuthentication().withUser("dba").password("root123").roles("ADMIN", "MT");//dba have two roles.
     }
 
