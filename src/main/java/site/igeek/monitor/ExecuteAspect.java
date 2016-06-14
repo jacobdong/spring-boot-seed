@@ -69,8 +69,8 @@ public class ExecuteAspect {
             LOG.info("形参类型" + Arrays.toString(types.toArray()));
             LOG.info("形参名称" + Arrays.toString(params.toArray()));
             LOG.info("实参内容" + Arrays.toString(proceedingJoinPoint.getArgs()));
-            LOG.info("方法耗时:" + ((System.nanoTime() - begin) / (1000 * 1000)));
-            LOG.info("方法耗时:" + (System.currentTimeMillis() - start));
+            LOG.info("方法耗时:" + ((System.nanoTime() - begin) / (1000 * 1000)) + "ms");
+            LOG.info("方法耗时:" + (System.currentTimeMillis() - start) + "ms");
             LOG.info("=============================================");
             return object;
         } catch (Throwable throwable) {

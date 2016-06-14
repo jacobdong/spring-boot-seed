@@ -57,13 +57,11 @@
 > 添加方法监控
 
 ```
-2016-06-14 15:34:18.369  INFO 18745 --- [nio-8080-exec-1] site.igeek.monitor.ExecuteAspect         : =============================================
-2016-06-14 15:34:18.369  INFO 18745 --- [nio-8080-exec-1] site.igeek.monitor.ExecuteAspect         : 类名为:site.igeek.controller.UserController
-2016-06-14 15:34:18.369  INFO 18745 --- [nio-8080-exec-1] site.igeek.monitor.ExecuteAspect         : 方法名字为:getAllUser
-2016-06-14 15:34:18.369  INFO 18745 --- [nio-8080-exec-1] site.igeek.monitor.ExecuteAspect         : 形参类型[int, int, java.lang.String, boolean]
-2016-06-14 15:34:18.369  INFO 18745 --- [nio-8080-exec-1] site.igeek.monitor.ExecuteAspect         : 形参名称[pageIndex, pageSize, orderBy, asc]
-2016-06-14 15:34:18.369  INFO 18745 --- [nio-8080-exec-1] site.igeek.monitor.ExecuteAspect         : 实参内容[1, 10, account, false]
-2016-06-14 15:34:18.369  INFO 18745 --- [nio-8080-exec-1] site.igeek.monitor.ExecuteAspect         : 方法耗时:957
-2016-06-14 15:34:18.369  INFO 18745 --- [nio-8080-exec-1] site.igeek.monitor.ExecuteAspect         : 方法耗时:957
-2016-06-14 15:34:18.370  INFO 18745 --- [nio-8080-exec-1] site.igeek.monitor.ExecuteAspect         : =============================================
+ 类名为:site.igeek.controller.UserController
+ 方法名字为:getAllUser
+ 形参类型[int, int, java.lang.String, boolean]
+ 形参名称[pageIndex, pageSize, orderBy, asc]
+ 实参内容[1, 10, account, false]
+ 方法耗时:957ms
+ 方法耗时:957ms
 ```
