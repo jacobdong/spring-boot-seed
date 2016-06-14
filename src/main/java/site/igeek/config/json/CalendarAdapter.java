@@ -1,4 +1,4 @@
-package site.igeek.config;
+package site.igeek.config.json;
 
 import com.google.gson.*;
 

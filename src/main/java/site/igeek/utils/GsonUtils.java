@@ -2,9 +2,9 @@ package site.igeek.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import site.igeek.config.CalendarAdapter;
-import site.igeek.config.DeserializationExclusionStrategy;
-import site.igeek.config.SerializationExclusionStrategy;
+import site.igeek.config.json.CalendarAdapter;
+import site.igeek.config.json.DeserializationExclusionStrategy;
+import site.igeek.config.json.SerializationExclusionStrategy;
 
 import java.util.Calendar;
 

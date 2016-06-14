@@ -1,4 +1,4 @@
-package site.igeek.config;
+package site.igeek.config.json;
 
 import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
@@ -6,7 +6,7 @@ import com.google.gson.FieldAttributes;
 /**
  * Created by jacobdong on 16/5/5.
  */
-public class SerializationExclusionStrategy implements ExclusionStrategy {
+public class DeserializationExclusionStrategy implements ExclusionStrategy {
     @Override
     public boolean shouldSkipField(FieldAttributes f) {
         Exclude exclude = f.getAnnotation(Exclude.class);
@@ -22,7 +22,7 @@ public class SerializationExclusionStrategy implements ExclusionStrategy {
 
     private boolean shouldSkip(Exclude exclude) {
         if (null != exclude) {
-            if (!exclude.serialize()) {
+            if (!exclude.deserialize()) {
                 return true;
             } else {
                 return false;

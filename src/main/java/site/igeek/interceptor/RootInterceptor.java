@@ -13,15 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 @Component
 public class RootInterceptor implements HandlerInterceptor {
 
-//    @Value("${management.context-path}")
-//    private String monitorContextPath;
-
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
-
         String requestURI = httpServletRequest.getRequestURI();
         System.out.println("======================= 全局拦截器 ======================= ");
-//        System.out.println(monitorContextPath);
         System.out.println("当前拦截到的URL为" + requestURI);
         System.out.println("======================= ======== ======================= ");
         return true;

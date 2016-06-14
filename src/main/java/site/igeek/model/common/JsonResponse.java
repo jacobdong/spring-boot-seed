@@ -1,6 +1,7 @@
 package site.igeek.model.common;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import site.igeek.exception.ControllerError;
 
 /**
@@ -8,9 +9,8 @@ import site.igeek.exception.ControllerError;
  */
 public class JsonResponse<T> {
 
-    private static final Logger LOGGER = Logger.getLogger(JsonResponse.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(JsonResponse.class);
 
-    private boolean success;
 
     private T data;
     private Integer code;
@@ -19,22 +19,20 @@ public class JsonResponse<T> {
 
 
     public JsonResponse() {
+        //保留空构造方法
     }
 
 
     public JsonResponse(T data) {
-        this.success = true;
+        this.code = 65536;
         this.data = data;
     }
 
     public static JsonResponse createError(ControllerError error) {
         JsonResponse jsonResponse = new JsonResponse();
-
-        jsonResponse.success = false;
         jsonResponse.error = error.name();
         jsonResponse.errorDesc = error.getErrorMessage();
         jsonResponse.code = error.getErrorCode();
-
         LOGGER.debug(error.toString());
         return jsonResponse;
     }
@@ -72,11 +70,4 @@ public class JsonResponse<T> {
         this.errorDesc = errorDesc;
     }
 
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
 }

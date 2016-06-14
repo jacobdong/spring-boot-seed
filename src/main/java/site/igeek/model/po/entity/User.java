@@ -1,7 +1,7 @@
 package site.igeek.model.po.entity;
 
 import com.google.gson.annotations.Expose;
-import site.igeek.config.Exclude;
+import site.igeek.config.json.Exclude;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
