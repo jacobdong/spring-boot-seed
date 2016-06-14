@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
+ * 定时任务执行
  * Created by jacobdong on 16/6/14.
  */
 @Component
@@ -19,6 +20,9 @@ public class TimedTask {
     private Logger LOG = LoggerFactory.getLogger(TimedTask.class);
     private final SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
+    /**
+     * 定时间隔执行
+     */
     @Scheduled(fixedRate = 1000)
     public void secondTask() {
         LOG.info("每秒执行一次的task-->" + SDF.format(new Date()));
@@ -35,6 +39,9 @@ public class TimedTask {
     //    7.年份（1970－2099）
     //    参考文档: http://rainbowdesert.iteye.com/blog/2107220
 
+    /**
+     * 到固定时间点执行
+     */
     @Scheduled(cron = "59 * * * * *")
     public void minuteTask() {
         LOG.info("每分钟执行一次的task-->" + SDF.format(new Date()));
