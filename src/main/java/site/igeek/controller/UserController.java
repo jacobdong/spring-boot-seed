@@ -47,6 +47,7 @@ public class UserController {
 
 
     @RequestMapping(value = "/{userId}", method = RequestMethod.GET, produces = "application/json")
+    @Execute(name = "根据用户ID获取用户信息")
     public
     @ResponseBody
     JsonResponse<User> getUser(@PathVariable String userId) {
