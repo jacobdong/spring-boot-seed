@@ -1,4 +1,4 @@
-package site.igeek.convert;
+package site.igeek.convert.common;
 
 import org.springframework.data.domain.Page;
 import site.igeek.model.common.Pagination;
@@ -11,6 +11,13 @@ import java.util.ArrayList;
  */
 public class PaginationDataConvert {
 
+    /**
+     * JPA查询获得的JPA 对象转为 rest对外包装的pageData对象
+     *
+     * @param jpaPage  通过jpa查询获得的Page对象
+     * @param pageSize 每页限制的条数
+     * @return
+     */
     public static PaginationData convertJpaPage2PaginationData(Page jpaPage, int pageSize) {
 
         PaginationData paginationData = new PaginationData();

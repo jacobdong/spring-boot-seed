@@ -4,7 +4,8 @@ package site.igeek.exception;
  * Created by jacobdong on 16/3/21.
  */
 public enum ControllerError {
-    SYSTEM_AUTHENTICATION_MAINTAIN("认证系统正在维护中", 10000000);
+    //SUCCSS 0x000000010000
+    SYSTEM_AUTHENTICATION_MAINTAIN("认证系统正在维护中", 0x0000000020000);
 
     private String errorMessage;
     private Integer errorCode;
@@ -29,5 +30,14 @@ public enum ControllerError {
 
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
+    }
+
+
+    public static void main(String[] args) {
+
+        for (ControllerError error : ControllerError.values()) {
+            System.out.println(error.name() + error.getErrorCode());
+        }
+
     }
 }

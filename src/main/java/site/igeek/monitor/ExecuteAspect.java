@@ -28,16 +28,6 @@ public class ExecuteAspect {
 
     }
 
-//    @Before("annotationPointCut()")
-//    public void before(JoinPoint joinPoint) {
-//        MethodSignature signature = (MethodSignature) joinPoint.getSignature();
-//
-//        Method method = signature.getMethod();
-//        Execute execute = method.getAnnotation(Execute.class);
-//
-//        LOG.info("=============================================");
-//    }
-
     //环绕通知
     @Around("annotationPointCut()")
     public Object addTest(ProceedingJoinPoint proceedingJoinPoint) throws Exception {

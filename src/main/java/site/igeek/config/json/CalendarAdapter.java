@@ -6,6 +6,7 @@ import java.lang.reflect.Type;
 import java.util.Calendar;
 
 /**
+ * 日历反序列化和序列化配置
  * Created by jacobdong on 16/1/12.
  */
 public class CalendarAdapter implements JsonSerializer<Calendar>, JsonDeserializer<Calendar> {

@@ -4,6 +4,7 @@ import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
 
 /**
+ * 反序列化时通过 配置 annotation {@link Exclude} 忽略实体对象中的属性
  * Created by jacobdong on 16/5/5.
  */
 public class DeserializationExclusionStrategy implements ExclusionStrategy {
@@ -20,6 +21,12 @@ public class DeserializationExclusionStrategy implements ExclusionStrategy {
     }
 
 
+    /**
+     * 反序列化是否跳过此属性
+     *
+     * @param exclude
+     * @return
+     */
     private boolean shouldSkip(Exclude exclude) {
         if (null != exclude) {
             if (!exclude.deserialize()) {

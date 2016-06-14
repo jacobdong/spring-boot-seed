@@ -4,7 +4,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import site.igeek.convert.PaginationDataConvert;
+import site.igeek.convert.common.PaginationDataConvert;
 import site.igeek.model.common.PaginationData;
 import site.igeek.model.po.entity.User;
 import site.igeek.repository.entity.UserRepository;

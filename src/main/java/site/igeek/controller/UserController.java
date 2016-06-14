@@ -22,6 +22,15 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    /**
+     * 获取用户列表
+     *
+     * @param pageIndex 当前页
+     * @param pageSize  每页显示的条数
+     * @param orderBy   排序的字段
+     * @param asc       是否正序排列
+     * @return
+     */
     @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
     @Execute(name = "获取用户列表")
     public JsonResponse<PaginationData<User>> getAllUser(@RequestParam(required = false, defaultValue = "1") int pageIndex,
@@ -43,14 +52,16 @@ public class UserController {
     }
 
 
+    /**
+     * 根据用户id获取用户信息
+     *
+     * @param userId
+     * @return
+     */
     @RequestMapping(value = "/{userId}", method = RequestMethod.GET, produces = "application/json")
     @Execute(name = "根据用户ID获取用户信息")
     public JsonResponse<User> getUser(@PathVariable String userId) {
         return new JsonResponse<>(userService.getUser(userId));
     }
-
-    @RequestMapping(value = "/{userId}/customers", method = RequestMethod.GET, produces = "application/json")
-    public JsonResponse<String> getxxx(@PathVariable String userId) {
-        return new JsonResponse<>("abc123123123");
-    }
+    
 }

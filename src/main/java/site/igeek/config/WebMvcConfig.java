@@ -20,17 +20,21 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("index");
-        //registry.addViewController("/hello").setViewName("hello");
     }
 
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+
         converters.add(createGsonHttpMessageConverter());
         super.configureMessageConverters(converters);
-        //LOGGER.info("# 添加GSON 支持结束");
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * 配置json序列化使用GSON
+     *
+     * @return
+     */
     public static GsonHttpMessageConverter createGsonHttpMessageConverter() {
         GsonHttpMessageConverter converter = new GsonHttpMessageConverter();
         converter.setGson(GsonUtils.GSON);
