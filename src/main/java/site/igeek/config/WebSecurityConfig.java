@@ -1,5 +1,7 @@
 package site.igeek.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -17,14 +19,14 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableGlobalMethodSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    private final Logger LOGGER = LoggerFactory.getLogger(WebSecurityConfig.class);
+
     @Autowired
     public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication().withUser("user").password("abc123").roles("USER");
         auth.inMemoryAuthentication().withUser("admin").password("RootRoot!!!!---").roles("ADMIN");
         auth.inMemoryAuthentication().withUser("dba").password("root123").roles("ADMIN", "MT");//dba have two roles.
     }
-
-
 
 
     @Override
@@ -39,6 +41,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
 
-        System.out.print("=====> 配置权限完毕");
+        LOGGER.info("=====> 配置权限完毕");
     }
 }

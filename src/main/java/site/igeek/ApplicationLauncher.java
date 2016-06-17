@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import site.igeek.exception.ControllerError;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -20,21 +21,25 @@ public class ApplicationLauncher {
     public static void main(String[] args) {
 
         ApplicationContext ctx = SpringApplication.run(ApplicationLauncher.class, args);
-        System.out.println(ctx.getApplicationName());
-        System.out.println(ctx.getEnvironment());
-        System.out.println(ctx.getStartupDate());
 
 
         LOG.info("====================================");
-        LOG.info("Beans available in this application:");
+        LOG.debug("Beans available in this application:");
         String[] beanNames = ctx.getBeanDefinitionNames();
+
         Arrays.sort(beanNames);
         for (String beanName : beanNames) {
             LOG.info(beanName);
         }
 
+        LOG.info("当前环境:" + Arrays.toString(ctx.getEnvironment().getActiveProfiles()));
         LOG.info("应用名称:" + (ctx.getApplicationName()));
         LOG.info("启动时间:" + (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(ctx.getStartupDate())));
+        LOG.info("全局错误码====================================");
+
+        for (ControllerError error : ControllerError.values()) {
+            LOG.info(error.name() + "," + error.getErrorMessage() + "," + error.getErrorCode());
+        }
         LOG.info("====================================");
     }
 }
