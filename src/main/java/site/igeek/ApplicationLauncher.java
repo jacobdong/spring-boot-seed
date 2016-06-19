@@ -24,14 +24,13 @@ public class ApplicationLauncher {
 
 
         LOG.info("====================================");
-        LOG.debug("Beans available in this application:");
-        String[] beanNames = ctx.getBeanDefinitionNames();
-
-        Arrays.sort(beanNames);
-        for (String beanName : beanNames) {
-            LOG.info(beanName);
-        }
-
+//        LOG.debug("Beans available in this application:");
+//        String[] beanNames = ctx.getBeanDefinitionNames();
+//
+//        Arrays.sort(beanNames);
+//        for (String beanName : beanNames) {
+//            LOG.info(beanName);
+//        }
         LOG.info("当前环境:" + Arrays.toString(ctx.getEnvironment().getActiveProfiles()));
         LOG.info("应用名称:" + (ctx.getApplicationName()));
         LOG.info("启动时间:" + (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(ctx.getStartupDate())));
