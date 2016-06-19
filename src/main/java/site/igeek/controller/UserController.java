@@ -18,7 +18,7 @@ import java.util.Arrays;
 /**
  * Created by jacobdong on 16/5/5.
  */
-@RequestMapping("/users")
+@RequestMapping(value = "/users")
 @RestController
 public class UserController {
 
@@ -34,12 +34,12 @@ public class UserController {
      * @param asc       是否正序排列
      * @return
      */
-    @ApiOperation(value = "获取用户列表")
+    @ApiOperation(value = "获取用户列表", notes = "根据分页信息获取分页列表")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "pageIndex", value = "访问的目标页", required = false, dataType = "int"),
             @ApiImplicitParam(name = "pageSize", value = "每页显示的数量", required = false, dataType = "int"),
             @ApiImplicitParam(name = "orderBy", value = "排序字段", required = false, dataType = "String"),
-            @ApiImplicitParam(name = "asc", value = "是否正序", required = false, dataType = "boolean")
+            @ApiImplicitParam(name = "asc", value = "是否正序", required = false, dataType = "Boolean")
     })
     @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
     @Execute(name = "获取用户列表")
@@ -68,8 +68,8 @@ public class UserController {
      * @param userId
      * @return
      */
-    @ApiOperation(value = "根据用户ID获取用户信息")
-    @ApiImplicitParam(name = "userId", value = "用户ID", required = true, dataType = "boolean")
+    @ApiOperation(value = "查看用户详情", notes = "根据用户ID获取")
+    @ApiImplicitParam(name = "userId", value = "用户ID", required = true, dataType = "String")
     @RequestMapping(value = "/{userId}", method = RequestMethod.GET, produces = "application/json")
     @Execute(name = "根据用户ID获取用户信息")
     public JsonResponse<User> getUser(@PathVariable String userId) {

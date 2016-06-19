@@ -1,6 +1,5 @@
 package site.igeek.config;
 
-import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.GsonHttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -13,7 +12,7 @@ import java.util.List;
 /**
  * Created by jacobdong on 16/1/12.
  */
-@Configuration
+//@Configuration
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
 
